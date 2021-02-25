@@ -1,5 +1,5 @@
 # Sulfur.js
-![alt text](https://github.com/JasimAlrawie/Sulfur.js/blob/main/logo.png)
+<img src="https://github.com/JasimAlrawie/Sulfur.js/blob/main/logo.png"></img>
 
 ## Introduction
 
