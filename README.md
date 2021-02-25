@@ -1,5 +1,7 @@
 # Sulfur.js
+<div style="text-align:center;wdith:100%">
 <img style="align:center" width="25%" height="25%" src="https://github.com/JasimAlrawie/Sulfur.js/blob/main/logo.png"></img>
+</div>
 
 ## Introduction
 
