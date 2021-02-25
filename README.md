@@ -32,7 +32,7 @@ elem.assign({onclick(){console.log("bla bla bla again")}})
 
 ## Methods in Sulfur Object 
 <ol>
-"<li>assign: ƒ assign(data)</li>
+<li>assign: ƒ assign(data)</li>
 <li>attr: ƒ attr(data)</li>
 <li>bg: ƒ bg(col)</li>
 <li>blur: ƒ blur()</li>
@@ -76,6 +76,6 @@ elem.assign({onclick(){console.log("bla bla bla again")}})
 <li>get id: ƒ id()</li>
 <li>get outer: ƒ outer()</li>
 <li>get parent: ƒ parent()</li>
-<li>get val: ƒ val()</li>"
+<li>get val: ƒ val()</li>
 </ol>
 
