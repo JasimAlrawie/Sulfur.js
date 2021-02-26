@@ -19,6 +19,7 @@
   elem.on("click",e=>{console.log("bla bla bla")})
   
   elem.css({color:"red".cursor:"pointer"})
+  
   elem.assign({onclick(){console.log("bla bla bla again")}})
 </code>
 
