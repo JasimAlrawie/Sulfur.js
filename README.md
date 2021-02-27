@@ -31,52 +31,122 @@
 > <script src="Sulfur.js"></script>
 > 
 
-## Methods in Sulfur Object 
-<ol>
-<li>assign: ƒ assign(data)</li>
-<li>attr: ƒ attr(data)</li>
-<li>bg: ƒ bg(col)</li>
-<li>blur: ƒ blur()</li>
-<li>childCount: (...)</li>
-<li>children: (...)</li>
-<li>class: (...)</li>
-<li>click: ƒ click()</li>
-<li>clone: ƒ clone(b)</li>
-<li>color: ƒ color(col)</li>
-<li>constructor: class Sulf</li>
-<li>css: ƒ css(data)</li>
-<li>define: ƒ define(key,value)</li>
-<li>disable: ƒ disable()</li>
-<li>enable: ƒ enable()</li>
-<li>enabled: (...)</li>
-<li>first: (...)</li>
-<li>focus: ƒ focus()</li>
-<li>getRect: (...)</li>
-<li>hide: ƒ hide()</li>
-<li>html: ƒ html(data)</li>
-<li>id: (...)</li>
-<li>moveTo: ƒ moveTo(x,y,mode="fixed")</li>
-<li>on: ƒ on(EventType,callback)</li>
-<li>outer: (...)</li>
-<li>parent: (...)</li>
-<li>put: ƒ put(Element)</li>
-<li>query: ƒ query(Selector)</li>
-<li>ref: ƒ ref(key)</li>
-<li>relMove: ƒ relMove(x,y)</li>
-<li>remove: ƒ remove()</li>
-<li>text: ƒ text(data)</li>
-<li>toggleHide: ƒ toggleHide()</li>
-<li>unhide: ƒ unhide()</li>
-<li>val: (...)</li>
-<li>get childCount: ƒ childCount()</li>
-<li>get children: ƒ children()</li>
-<li>get class: ƒ class()</li>
-<li>get enabled: ƒ enabled()</li>
-<li>get first: ƒ first()</li>
-<li>get getRect: ƒ getRect()</li>
-<li>get id: ƒ id()</li>
-<li>get outer: ƒ outer()</li>
-<li>get parent: ƒ parent()</li>
-<li>get val: ƒ val()</li>
-</ol>
+# Methods in Sulf Object
+  html(str) sets innerHTML or return innerHTML if arg str is null
+  
+  text(str) same as innerHTML but innerText
+  
+  put(e) to append the element if not appended
+  
+  set(k,v) to define a property or change it
+  
+  prop(k) to get property
+  
+  on(e,f) shortcut of addEventListener
+  
+  closest(s) to get closest element 
+  
+  hide() to hide the element
+  
+  unhide to show the element
+  
+  toggleHide() toggle visibility on/off
+  
+  disable() / enable() to disable and enable the element
+  
+  draggble(b) make the element draggable b=true or false to disable
+  
+  attr(obj) set group of attributes at once like {valeu:"foo"}
+  
+  assign(obj) to assign data to HTMLElement Object like {onclick(){console.log("hello there")}}
+  
+  click() click the element
+  
+  focus() / blur() to focus and blur elements like inputs
+  
+  store(k,v) to store values in dataset of the element
+  
+  ref(k) to get value from dataset
+  
+  query(s) to get element inside the main element , s is Selector
+  
+  class .toggle .add .remove .getList  ... class managament
+  
+  clone(b) will return clone of the element
+  
+  remove to remove the element
+  
+  # getters
+    val - get the value if element has value attribute
+    
+    first - get first childElement inside the main element
+    
+    children - get array of children
+    
+    childCount - count of children
+    
+    id - get element's id
+    
+    outer - get outerHTML
+    
+    parent - get parentElement
+    
+    getRect - shortcut of getBoundingClientRect()
+    
+    enabled - enabled or not true/false
+    
+    isDraggble - true/false 
+    
+  # static methods in Sulf
+    query(s) to make new Sulf Object with an existing element in docuemnt
+    
+    Sulfy(he) to turn any HTMLElement Object into Sulf Object
+    
+  # css things
+    moveTo(x,y) to change position of the element if elem.style.position is not none should be relative or fixed or any...
+    
+    relMove(x,y) same as moveTo but will make the style.position = relative and move it relativly to its position
+    
+    color(col) to change text color . col = hex string or rgb or hsl
+    
+    bg(col) to change background color . col = hex string or rgb or hsl
+    
+    css(obj) to style the element ex. {color:"red",fontSize:"24",position:"fixed"}
+    
+    step(obj) to add step animation 
+    
+    animate(d,i) d = duration , i = iteration , default d = 1000, i = inf ... to start animation you assigned it with step method
+    
+    animState - get animation state running,idle,done,...
+    
+  # Untilites Sulf.utils
+    # Math
+      map(n,s1,e1,s2,e2) to map value to different scale
+      
+      random(min,max) to get random number with range
+      
+      dist(x1,y1,x2,y2) to get distance between two pointes
+      
+      ...more comming
+    
+    # String
+      shuffle(str) return shuffled string
+      
+      toArray(str) return string as array
+      
+    # Array
+      shuffle(arr) return shuffled array
+      
+      toString(arr) return array as string
+    
+    
+    
+    
+    
+    
+    
+ 
+  
+  
+  
 
