@@ -119,7 +119,7 @@
     
     animState - get animation state running,idle,done,...
     
-  # Untilites Sulf.utils
+  # Utilities Sulf.utils
     # Math
       map(n,s1,e1,s2,e2) to map value to different scale
       
