@@ -120,7 +120,7 @@
     animState - get animation state running,idle,done,...
     
   # Utilities Sulf.utils
-    # Math
+   # Math
       map(n,s1,e1,s2,e2) to map value to different scale
       
       random(min,max) to get random number with range
@@ -129,12 +129,12 @@
       
       ...more comming
     
-    # String
+   # String
       shuffle(str) return shuffled string
       
       toArray(str) return string as array
       
-    # Array
+   # Array
       shuffle(arr) return shuffled array
       
       toString(arr) return array as string
