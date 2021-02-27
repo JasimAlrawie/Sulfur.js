@@ -1,4 +1,3 @@
-
 class Sulf{
     /**
      * 
@@ -7,6 +6,17 @@ class Sulf{
     constructor(type="div"){
         this.type = type
         this.element = document.createElement(type)
+        /**@private*/
+        this._props = {}
+        /**@private*/
+        this._raw = ""
+        /**@private */
+        this._anim = []  
+        //@deprecated
+        // /**@private */
+        // this._animdur = 1000
+        // /**@private */
+        // this._animiter = Infinity  
     }
     /**
      * 
@@ -33,6 +43,34 @@ class Sulf{
             left:`${x}px`,
             top:`${y}px`
         })
+    }
+    /**
+     * 
+     * @param {String} key
+     * @param {String} value 
+     * @description define a value or change
+     */
+    set(key,value){
+        this._props[key] = value;
+        this._update()
+    }
+    /**
+     * 
+     * @param {String} key proterty name
+     * @description return value of the property
+     */
+    prop(key){
+        return this._props[key]
+    }
+    /**@private*/
+    _update(){
+        let res = this._raw.replace(Sulf._pexp,this._subst.bind(this))
+        this.element.innerHTML = res
+        return res
+    }
+    /**@private*/
+    _subst(x,t){
+        return this._props[t]
     }
     /**
      * 
@@ -71,6 +109,8 @@ class Sulf{
         if(!data){
             return this.element.innerHTML
         }
+        this._raw = data
+        data = this._update()
         this.element.innerHTML = data
     }
     /**
@@ -103,6 +143,31 @@ class Sulf{
         }
     }
     /**
+     * 
+     * @param {Object} anim add one animation step
+     */
+    step(anim){
+        this._anim.push(anim)
+    }
+    /**
+     * 
+     * @param {Number} duration duration of the animation
+     * @param {Number} iteration times to iterate
+     * @description to start the animation 
+     * @default duration=1000, iteration=Infitity
+     */
+    animate(duration=1000,iteration=Infinity){
+        this.element.animate(this._anim,{duration:duration,iterations:iteration})
+    }
+    /**
+     * 
+     * @param {String} selector 
+     * @description get clostest element
+     */
+    closest(selector){
+        return Sulf.Sulfy(this.element.closest(selector))
+    }
+    /**
      * to hide the element
      */
     hide(){
@@ -131,6 +196,20 @@ class Sulf{
      */
     enable(){
         this.element.disabled = false
+    }
+    /**
+     * 
+     * @param {Boolean} bool make Element draggable or not
+     */
+    draggble(bool){
+        this.element.draggable = bool
+    }
+    /**
+     * 
+     * @param {Boolean} bool can user heighlight this content or not
+     */
+    userSelect(bool){
+        this.element.userSelect = bool
     }
     /**
      * 
@@ -182,7 +261,7 @@ class Sulf{
      * @param {String} value 
      * @description store data in dataset of the element
      */
-    define(key,value){
+    store(key,value){
         this.element.dataset[key] = value
     }
     /**
@@ -203,9 +282,19 @@ class Sulf{
             return Sulf.Sulfy(this.element.querySelector(Selector))
         }
     }
+    get animState(){
+        let state = this.element.getAnimations()
+        if(state[0] == null){
+            return "done"
+        }
+        return state
+    }
     /**
      * element class management
      */
+    get isDraggable(){
+        return this.element.draggable
+    }
     get class(){
         let classContext = {
             /**
@@ -243,11 +332,11 @@ class Sulf{
     }
     /**
      * 
-     * @param {Boolean} b 
+     * @param {Boolean} bool 
      * @description Returns a copy of node. If deep is true, the copy also includes the node's descendants.
      */
-    clone(b){
-        return this.element.cloneNode()
+    clone(bool){
+        return this.element.cloneNode(bool)
     }
     /**
      * remove the element
@@ -309,12 +398,80 @@ class Sulf{
     get getRect(){
         return this.element.getBoundingClientRect()
     }
-
+    /**@description some useful Math functions */
+    static get utils(){
+        return {
+            math:{
+                /**
+                 * 
+                 * @param {Number} x1 
+                 * @param {Number} y1 
+                 * @param {Number} x2 
+                 * @param {Number} y2 
+                 * @description get distance between two points
+                 */
+                dist(x1,y1,x2,y2){
+                    let a = x2 - x1
+                    let b = y2 - y1
+                    return Math.sqrt(a**2+b**2)
+                },
+                /**
+                 * 
+                 * @param {Number} n 
+                 * @param {Number} start1 
+                 * @param {Number} end1 
+                 * @param {Number} start2 
+                 * @param {Number} end2 
+                 * @description mapping number to diffrent scale
+                 */
+                map(n,start1,end1,start2,end2){
+                    return (n - start1) / (end1 - start1) * (end2 - start2) + start2;
+                },
+                random(min,max){
+                    if(!max){
+                        [max,min] = [min,0];
+                    }
+                    let rand = Math.random()
+                    return rand * (max - min) + min;
+                }
+            },
+            /**@description shuffle string */
+            str:{
+                shuffle(str){
+                    let arr = str.split("")
+                    for(let i=arr.length;i>0;i--){
+                        let rnd = Math.floor(Math.random()*i);
+                        [arr[i],arr[rnd]] = [arr[rnd],[arr[i]]]
+                    }
+                    return arr.join("")
+                },
+                toArray(str){
+                    return str.spint("")
+                }
+            },
+            /**@description shuffle array items */
+            array:{
+                shuffle(arr){
+                    for(let i=s.length;i>0;i--){
+                        let rnd = Math.floor(Math.random()*i);
+                        [arr[i],arr[rnd]] = [arr[rnd],[arr[i]]]
+                    }
+                    return arr.join("")
+                },
+                toStr(arr){
+                    return arr.join("")
+                }
+            }
+        }
+    }
     /**
      * return boolean enabled or not
      */
     get enabled(){
         return !this.element.disabled
+    }
+    static get _pexp(){
+        return /\{\{(\w+)\}\}/g
     }
     /**
      * 
@@ -325,8 +482,20 @@ class Sulf{
             throw new Error("null case")
         }
         let elm = new Sulf(Element.tagName)
+        elem._raw = elm.innerHTML
         elm.element = Element
         return elm
     }
-
+    /**
+     * 
+     * @param {String} Selector query selector
+     */
+    static query(Selector){
+        let elem = document.querySelector(Selector)
+        let s = new Sulf
+        s.element = elem
+        s.type = elem.tagName
+        s._raw = elem.innerHTML
+        return s
+    }
 }
