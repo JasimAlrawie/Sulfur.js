@@ -7,22 +7,18 @@
 
 > Sulfur.js is a javascript library to manage and create HTML elements with easy context 
 
-## Code Samples
-
-<code>
-  let elem = new Sulf;
+# Code Sample
+     let elm = new Sulf
+     
+     elm.html("<h1>hello mr.{{user}}</h1>")
   
-  elem.html("foo")
+     elm.set("user","foo")
   
-  elem.put(document.body)
+     elm.css({color:"red"})
   
-  elem.on("click",e=>{console.log("bla bla bla")})
-  
-  elem.css({color:"red".cursor:"pointer"})
-  
-  elem.assign({onclick(){console.log("bla bla bla again")}})
-</code>
-
+     elm.put(document.body)
+     
+     //result will be red text   hello mr.foo
 ..... and more
 
 ## Installation
