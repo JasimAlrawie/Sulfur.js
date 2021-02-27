@@ -3,9 +3,8 @@
 <img style="align:center" width="50%" height="50%" src="https://github.com/JasimAlrawie/Sulfur.js/blob/main/logo.png"></img>
 </div>
 
-## Introduction
-
-> Sulfur.js is a javascript library to manage and create HTML elements with easy context 
+# Introduction
+     Sulfur.js is a javascript library to manage and create HTML elements with easy context 
 
 # Code Sample
      let elm = new Sulf
@@ -21,11 +20,10 @@
      //result will be red text   hello mr.foo
 ..... and more
 
-## Installation
+# Installation
+      just put the Sulfur.js file in your project and then
+      <script src="Sulfur.js"></script>
 
-> just put the Sulfur.js file in your project and then
-> <script src="Sulfur.js"></script>
-> 
 
 # Methods in Sulf Object
     html(str) sets innerHTML or return innerHTML if arg str is null
