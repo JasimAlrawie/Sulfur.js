@@ -32,49 +32,49 @@
 > 
 
 # Methods in Sulf Object
-  html(str) sets innerHTML or return innerHTML if arg str is null
+    html(str) sets innerHTML or return innerHTML if arg str is null
   
-  text(str) same as innerHTML but innerText
+    text(str) same as innerHTML but innerText
   
-  put(e) to append the element if not appended
+    put(e) to append the element if not appended
   
-  set(k,v) to define a property or change it
+    set(k,v) to define a property or change it
   
-  prop(k) to get property
+    prop(k) to get property
   
-  on(e,f) shortcut of addEventListener
+    on(e,f) shortcut of addEventListener
   
-  closest(s) to get closest element 
+    closest(s) to get closest element 
   
-  hide() to hide the element
+    hide() to hide the element
   
-  unhide to show the element
+    unhide to show the element
   
-  toggleHide() toggle visibility on/off
+    toggleHide() toggle visibility on/off
   
-  disable() / enable() to disable and enable the element
+    disable() / enable() to disable and enable the element
   
-  draggble(b) make the element draggable b=true or false to disable
+    draggble(b) make the element draggable b=true or false to disable
   
-  attr(obj) set group of attributes at once like {valeu:"foo"}
+    attr(obj) set group of attributes at once like {valeu:"foo"}
   
-  assign(obj) to assign data to HTMLElement Object like {onclick(){console.log("hello there")}}
+    assign(obj) to assign data to HTMLElement Object like {onclick(){console.log("hello there")}}
   
-  click() click the element
+    click() click the element
   
-  focus() / blur() to focus and blur elements like inputs
+    focus() / blur() to focus and blur elements like inputs
   
-  store(k,v) to store values in dataset of the element
+    store(k,v) to store values in dataset of the element
   
-  ref(k) to get value from dataset
+    ref(k) to get value from dataset
   
-  query(s) to get element inside the main element , s is Selector
+    query(s) to get element inside the main element , s is Selector
   
-  class .toggle .add .remove .getList  ... class managament
+    class .toggle .add .remove .getList  ... class managament
   
-  clone(b) will return clone of the element
+    clone(b) will return clone of the element
   
-  remove to remove the element
+    remove to remove the element
   
   # getters
     val - get the value if element has value attribute
