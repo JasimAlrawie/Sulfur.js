@@ -14,19 +14,19 @@
 
      HTML
 ```html
-          <div id="app"></div>
+<div id="app"></div>
 ```
      Javascript
 ```js
-          let app = new Sulf("#app")
+let app = new Sulf("#app")
      
-          elm.html("<h1>hello mr.{{user}}</h1>")
+elm.html("<h1>hello mr.{{user}}</h1>")
   
-          elm.set("user","foo")
+elm.set("user","foo")
   
-          elm.css({color:"red"})
+elm.css({color:"red"})
      
-     //result will be red text   hello mr.foo
+//result will be red text   hello mr.foo
 ```
 # Simple doubleMustache feature
      HTML
