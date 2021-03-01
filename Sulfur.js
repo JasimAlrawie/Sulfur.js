@@ -1,15 +1,14 @@
 class Sulf{
     /**
      * 
-     * @param {String} type if you left it empty the type will be div
+     * @param {String} selector query selector
      */
-    constructor(type="div"){
-        this.type = type
-        this.element = document.createElement(type)
+    constructor(selector){
+        this.element = document.querySelector(selector)
         /**@private*/
         this._props = {}
         /**@private*/
-        this._raw = ""
+        this._raw = this.element.innerHTML
         /**@private */
         this._anim = []  
         //@deprecated
@@ -69,8 +68,17 @@ class Sulf{
         return res
     }
     /**@private*/
-    _subst(x,t){
-        return this._props[t]
+    _subst(x,t,a){
+        let result = this._props[t]
+        if(a){
+            let slots = a.substring(1,a.length-1).split(",")
+            result = this._props[t]
+            for(let i=0;i<slots.length;i++){
+                if(result == null) continue
+                result = result.replaceAll(`#${i}slot`,slots[i])
+            }
+        }
+        return result
     }
     /**
      * 
@@ -275,12 +283,41 @@ class Sulf{
      * 
      * @param {String} Selector to get an elements inside 
      */
-    query(Selector){
-        if(Sulf.Sulfy(this.element.querySelector(Selector)) == null){
-            throw new Error("Element not found")
-        }else{
-            return Sulf.Sulfy(this.element.querySelector(Selector))
+    query(selector){
+        let target = this.element.querySelector(selector)
+        if(target == null) throw new Error("Element not found")
+        let tmp = Sulf.crate()
+        tmp.element = target
+        tmp._raw = target.innerHTML
+        return tmp
+    }
+    queryAll(selector){
+        let targets = [...this.element.querySelectorAll(selector)]
+        if(targets.length <=0 ) throw new Error("no elements with this selector")
+        targets = targets.map(e=>{
+            let tmp = Sulf.crate()
+            tmp.element = e
+            tmp._raw = e.innerHTML
+            return tmp
+        })
+        return targets
+    }
+    queryList(selector){
+        let targets = this.queryAll(selector)
+        let list = {
+            array:targets,
         }
+        for(let method of Object.getOwnPropertyNames(Sulf.prototype)){
+            let inst = Sulf.crate()
+            if(inst[method] instanceof Function){
+                list[method] = (...args)=>{
+                    for(let item of targets){
+                        item[method](...args)
+                    }
+                }
+            }
+        }
+        return list
     }
     get animState(){
         let state = this.element.getAnimations()
@@ -361,6 +398,9 @@ class Sulf{
      */
     get first(){
         return Sulf.Sulfy(this.element.firstElementChild)
+    }
+    get last(){
+        return Sulf.Sulfy(this.element.lastElementChild)
     }
     /**
      * get all children elements as Array
@@ -471,28 +511,33 @@ class Sulf{
         return !this.element.disabled
     }
     static get _pexp(){
-        return /\{\{(\w+)\}\}/g
+        return /\{\{(\w+)\}\}(\(.*?\))?/g
     }
+    // static get _exparg(){
+    //     return /\{\{(\w+)\}\}/g
+    // }
     /**
      * 
      * @param {HTMLElement} Element turn any element into Sulfur Element
      */
+
     static Sulfy(Element){
         if(Element == null){
-            throw new Error("null case")
+            return null
         }
-        let elm = new Sulf(Element.tagName)
-        elem._raw = elm.innerHTML
+        let elm = Sulf.crate()
+        elm._raw = elm.innerHTML
         elm.element = Element
         return elm
     }
     /**
      * 
-     * @param {String} Selector query selector
+     * @param {String} Selector element type
+     * @description create brand new Sulf . type=div by default
      */
-    static query(Selector){
-        let elem = document.querySelector(Selector)
-        let s = new Sulf
+    static crate(type="div"){
+        let elem = document.createElement(type)
+        let s = new Sulf("html")
         s.element = elem
         s.type = elem.tagName
         s._raw = elem.innerHTML
