@@ -6,19 +6,51 @@
 # Introduction
      Sulfur.js is a javascript library to manage and create HTML elements with easy context 
 
+# Installation
+      just put the Sulfur.js file in your project and then
+      <script src="Sulfur.js"></script>
+
 # Code Sample
-     let elm = new Sulf
+     HTML
+          <div id="app"></div>
      
-     elm.html("<h1>hello mr.{{user}}</h1>")
+     Javascript
+     
+          let app = new Sulf("#app")
+     
+          elm.html("<h1>hello mr.{{user}}</h1>")
   
-     elm.set("user","foo")
+          elm.set("user","foo")
   
-     elm.css({color:"red"})
-  
-     elm.put(document.body)
+          elm.css({color:"red"})
      
      //result will be red text   hello mr.foo
-..... and more
+
+# Simple doubleMustache feature
+     HTML
+          <div id="foo">hello {{val}}</div>
+          
+          
+     Javascript
+
+          let elem = new Sulf("#foo")
+          
+          elem.set("val","cow")
+     
+     the result will be hello cow 
+#
+     doubleMustache can also take arguments
+     ex.
+     HTML
+          <div id="app"> {{person}}(Michel,21) </div>
+          
+     Javascript
+          let app = Sulf("#app")
+          
+          app.set("person","#0slot is #1slot years old")
+          
+     // the result will be Michel i 21 years old
+     
 
 # Installation
       just put the Sulfur.js file in your project and then
@@ -63,7 +95,11 @@
     ref(k) to get value from dataset
   
     query(s) to get element inside the main element , s is Selector
-  
+    
+    queryAll(s) same as query(s) but get multiple elements . array of elements
+    
+    queryList(s) same as queryAll but this will return speical object you can apply all Sulf methods without forloop 
+    
     class .toggle .add .remove .getList  ... class managament
   
     clone(b) will return clone of the element
@@ -74,6 +110,8 @@
     val - get the value if element has value attribute
     
     first - get first childElement inside the main element
+    
+    last - get last childElement inside the main element
     
     children - get array of children
     
@@ -132,8 +170,15 @@
       shuffle(arr) return shuffled array
       
       toString(arr) return array as string
-    
-    
+# Examples
+     # queryList(s)
+          let animals = app.queryList(".animal")
+          
+          animals.css({color:"blue"})
+          
+          // all elements with animal call will be blue
+          // css will be applied on all animals elements
+          // its same as for loop list of elements and color them
     
     
     
