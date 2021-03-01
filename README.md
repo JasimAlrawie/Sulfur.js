@@ -49,7 +49,7 @@
           
           app.set("person","#0slot is #1slot years old")
           
-     // the result will be Michel i 21 years old
+     // the result will be Michel is 21 years old
      
 
 # Installation
