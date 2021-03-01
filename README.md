@@ -11,11 +11,13 @@
       <script src="Sulfur.js"></script>
 
 # Code Sample
+
      HTML
+```html
           <div id="app"></div>
-     
+```
      Javascript
-     
+```js
           let app = new Sulf("#app")
      
           elm.html("<h1>hello mr.{{user}}</h1>")
@@ -25,7 +27,7 @@
           elm.css({color:"red"})
      
      //result will be red text   hello mr.foo
-
+```
 # Simple doubleMustache feature
      HTML
           <div id="foo">hello {{val}}</div>
