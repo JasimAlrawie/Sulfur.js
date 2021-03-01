@@ -176,7 +176,7 @@ just put the Sulfur.js file in your project and then
       shuffle(arr) return shuffled array
       
       toString(arr) return array as string
-#
+<hr>
 # Examples
 ```html
 <div class="animal">cat</div>
@@ -192,7 +192,7 @@ animals.css({color:"blue"})
 // css will be applied on all animals elements
 // its same as for loop list of elements and color them
 ```
-
+<hr>
 
 ```js
 let elem = Sulf.crate()
