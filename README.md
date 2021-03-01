@@ -178,21 +178,30 @@ just put the Sulfur.js file in your project and then
       toString(arr) return array as string
 #
 # Examples
-     # queryList(s)
-          let animals = app.queryList(".animal")
+```html
+<div class="animal">cat</div>
+<div class="animal">dog</div>
+<div class="animal">cow</div>
+```
+```js
+let animals = app.queryList(".animal")
           
-          animals.css({color:"blue"})
+animals.css({color:"blue"})
           
-          // all elements with animal call will be blue
-          // css will be applied on all animals elements
-          // its same as for loop list of elements and color them
-    
-    
-    
-    
-    
- 
-  
-  
-  
+// all elements with animal call will be blue
+// css will be applied on all animals elements
+// its same as for loop list of elements and color them
+```
+<br>
+```js
+let elem = Sulf.crate()
+
+elem.html("<button class='btn'>click me</button>")
+
+let btn = elem.query(".btn")
+
+btn.on("click",e=>{console.log("hello :D")})
+
+elem.put(document.body)
+```
 
