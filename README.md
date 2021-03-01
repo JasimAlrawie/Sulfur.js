@@ -192,7 +192,8 @@ animals.css({color:"blue"})
 // css will be applied on all animals elements
 // its same as for loop list of elements and color them
 ```
-<br>
+
+
 ```js
 let elem = Sulf.crate()
 
