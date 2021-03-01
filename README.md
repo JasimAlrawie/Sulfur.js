@@ -8,15 +8,16 @@
 
 # Installation
       just put the Sulfur.js file in your project and then
-      <script src="Sulfur.js"></script>
+```html
+<script src="Sulfur.js"></script>
+```
 
 # Code Sample
 
-     HTML
 ```html
 <div id="app"></div>
 ```
-     Javascript
+
 ```js
 let app = new Sulf("#app")
      
@@ -55,8 +56,10 @@ app.set("person","#0slot is #1slot years old")
 ```
 
 # Installation
-      just put the Sulfur.js file in your project and then
-      <script src="Sulfur.js"></script>
+just put the Sulfur.js file in your project and then
+```html
+<script src="Sulfur.js"></script>
+```
 
 
 # Methods in Sulf Object
