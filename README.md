@@ -188,7 +188,7 @@ just put the Sulfur.js file in your project and then
 
 ```
 
-<hr>
+
 
 ```js
 
