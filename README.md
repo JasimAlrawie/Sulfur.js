@@ -29,30 +29,30 @@ elm.css({color:"red"})
 //result will be red text   hello mr.foo
 ```
 # Simple doubleMustache feature
-     HTML
-          <div id="foo">hello {{val}}</div>
+```html
+<div id="foo">hello {{val}}</div>
+```
+```js
+let elem = new Sulf("#foo")
           
-          
-     Javascript
-
-          let elem = new Sulf("#foo")
-          
-          elem.set("val","cow")
+elem.set("val","cow")
      
-     the result will be hello cow 
-#
-     doubleMustache can also take arguments
-     ex.
-     HTML
-          <div id="app"> {{person}}(Michel,21) </div>
+//the result will be hello cow 
+```
+# 
+doubleMustache can also take arguments
+ex.
+```html
+<div id="app"> {{person}}(Michel,21) </div>
           
-     Javascript
-          let app = Sulf("#app")
+```js
+let app = Sulf("#app")
           
-          app.set("person","#0slot is #1slot years old")
+app.set("person","#0slot is #1slot years old")
           
-     // the result will be Michel is 21 years old
+// the result will be Michel is 21 years old
      
+```
 
 # Installation
       just put the Sulfur.js file in your project and then
@@ -154,13 +154,15 @@ elm.css({color:"red"})
     animState - get animation state running,idle,done,...
     
   # Utilities Sulf.utils
-   ## Math
-      map(n,s1,e1,s2,e2) to map value to different scale
+<h1>Math</h1>
+```markdown
+
+map(n,s1,e1,s2,e2) to map value to different scale
       
-      random(min,max) to get random number with range
+random(min,max) to get random number with range
       
-      dist(x1,y1,x2,y2) to get distance between two pointes
-      
+dist(x1,y1,x2,y2) to get distance between two pointes
+```
       ...more comming
     
    ## String
