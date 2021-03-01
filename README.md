@@ -157,16 +157,15 @@ just put the Sulfur.js file in your project and then
     animState - get animation state running,idle,done,...
     
   # Utilities Sulf.utils
-<h1>Math</h1>
-```markdown
+  # Math
+  
+     map(n,s1,e1,s2,e2) to map value to different scale
+      
+     random(min,max) to get random number with range
+      
+     dist(x1,y1,x2,y2) to get distance between two pointes
 
-map(n,s1,e1,s2,e2) to map value to different scale
-      
-random(min,max) to get random number with range
-      
-dist(x1,y1,x2,y2) to get distance between two pointes
-```
-      ...more comming
+      ...more comming  *note this function obtained from p5.js lib
     
    ## String
       shuffle(str) return shuffled string
