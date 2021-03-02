@@ -6,18 +6,12 @@
 # Introduction
      Sulfur.js is a javascript library to manage and create HTML elements with easy context 
 
-# Installation
-      just put the Sulfur.js file in your project and then
-```html
-
-<script src="Sulfur.js"></script>
-
-```
-
 # Code Sample
 
 ```html
+
 <div id="app"></div>
+
 ```
 
 ```js
@@ -50,7 +44,8 @@ elem.set("val","cow")
 //the result will be hello cow 
 
 ```
-# 
+<br>
+
 doubleMustache can also take arguments
 ex.
 ```html
