@@ -9,7 +9,9 @@
 # Installation
       just put the Sulfur.js file in your project and then
 ```html
+
 <script src="Sulfur.js"></script>
+
 ```
 
 # Code Sample
@@ -19,6 +21,7 @@
 ```
 
 ```js
+
 let app = new Sulf("#app")
      
 elm.html("<h1>hello mr.{{user}}</h1>")
@@ -28,25 +31,36 @@ elm.set("user","foo")
 elm.css({color:"red"})
      
 //result will be red text   hello mr.foo
+
 ```
 # Simple doubleMustache feature
+
 ```html
+
 <div id="foo">hello {{val}}</div>
+
 ```
+
 ```js
+
 let elem = new Sulf("#foo")
           
 elem.set("val","cow")
      
 //the result will be hello cow 
+
 ```
 # 
 doubleMustache can also take arguments
 ex.
 ```html
+
 <div id="app"> {{person}}(Michel,21) </div>
-          
+
+```
+
 ```js
+
 let app = Sulf("#app")
           
 app.set("person","#0slot is #1slot years old")
@@ -58,7 +72,9 @@ app.set("person","#0slot is #1slot years old")
 # Installation
 just put the Sulfur.js file in your project and then
 ```html
+
 <script src="Sulfur.js"></script>
+
 ```
 
 
