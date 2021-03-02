@@ -146,7 +146,7 @@ just put the Sulfur.js file in your project and then
     isDraggble - true/false 
     
   # static methods in Sulf
-    query(s) to make new Sulf Object with an existing element in docuemnt
+    create(t) create new element t=type default div
     
     Sulfy(he) to turn any HTMLElement Object into Sulf Object
     
