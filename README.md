@@ -161,9 +161,9 @@ just put the Sulfur.js file in your project and then
     
     css(obj) to style the element ex. {color:"red",fontSize:"24",position:"fixed"}
     
-    step(obj) to add step animation 
+    step(obj) to add an animation step
     
-    animate(d,i) d = duration , i = iteration , default d = 1000, i = inf ... to start animation you assigned it with step method
+    animate(d,i) d = duration , i = iteration , default d = 1000, i = inf ... to start animation you assigned with step method
     
     animState - get animation state running,idle,done,...
     
@@ -176,7 +176,7 @@ just put the Sulfur.js file in your project and then
       
      dist(x1,y1,x2,y2) to get distance between two pointes
 
-      ...more comming  *note this function obtained from p5.js lib
+      ...more comming  *note this functions ported from p5.js lib
     
    ## String
       shuffle(str) return shuffled string
