@@ -208,7 +208,7 @@ let animals = app.queryList(".animal")
 animals.css({color:"blue"})
           
 // all elements with animal calss will be blue
-// css will be applied on all animals elements
+// css will be applied on all animal elements
 // its same as for loop list of elements and color them
 
 ```
