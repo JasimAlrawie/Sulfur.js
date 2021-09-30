@@ -18,11 +18,11 @@
 
 let app = new Sulf("#app")
      
-elm.html("<h1>hello mr.{{user}}</h1>")
+app.html("<h1>hello mr.{{user}}</h1>")
   
-elm.set("user","foo")
+app.set("user","foo")
   
-elm.css({color:"red"})
+app.css({color:"red"})
      
 //result will be red text   hello mr.foo
 
